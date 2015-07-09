@@ -27,10 +27,9 @@ class Projectile extends Entity{
 	}
 	
 	override public function update(){
-		if(!_dead){
-			x += _velocityX;
-			y += _velocityY;
-			
+		if (!_dead) {
+			moveBy(_velocityX, _velocityY, null, true);
+
 			_explodeDistance -= _speed;
 			
 			if (_explodeDistance <= 0) {
