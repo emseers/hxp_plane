@@ -23,7 +23,7 @@ Similar to the old flash game [Skies of War]
 	haxelib set lime 2.4.3
 
 	
-5) For [FlashDevelop](http://www.flashdevelop.org/community/viewforum.php?f=11),
+5) (Optional) Get [FlashDevelop](http://www.flashdevelop.org/community/viewforum.php?f=11),
 works really well for Haxe and Flash work
 
 Clone and open project in FD, should work.
