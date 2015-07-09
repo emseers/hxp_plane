@@ -7,24 +7,38 @@ import com.haxepunk.HXP;
  */
 class Projectile extends Entity{
 	var _speed:Int = 30;
-	var _hitboxSize:Int = 2;
 	var _velocityX:Float;
 	var _velocityY:Float;
+	var _dead:Bool;
+	var _hitboxSize:Int = 2;
+	var _explodeDistance:Int;
 	
 	public function new() {
 		super();
 	}
 	
-	public function setupProjectile(_x:Float, _y:Float, _dir:Float):Void{
+	public function setProjectile(_x:Float, _y:Float, _dir:Float){
 		x = _x;
 		y = _y;
-		
-		_velocityX = _speed * Math.cos((HXP.RAD * -1) * _dir);
-		_velocityY = _speed * Math.sin((HXP.RAD * -1) * _dir);
+		_explodeDistance = 500;
+		_dead = false;
+		_velocityX = _speed * Math.cos(HXP.RAD * _dir);
+		_velocityY = _speed * Math.sin(HXP.RAD * _dir);
 	}
 	
 	override public function update(){
-		x += _velocityX;
-		y += _velocityY;
+		if(!_dead){
+			x += _velocityX;
+			y += _velocityY;
+			
+			_explodeDistance -= _speed;
+			
+			if (_explodeDistance <= 0) {
+				_dead = true;
+				destroyProjectile();
+			}
+		}
 	}
+	
+	public function destroyProjectile(){}
 }

@@ -64,11 +64,12 @@ class Player extends Entity{
 		/**
 		 * Weapons Input 
 		 */
-		if(Input.check(Key.SPACE)){
+		if(Input.mouseDown){
 			if (mgBulletTime == 0) {
 				// Fire mgBullet
-				//scene.create(mgBullet());
-				//mgBullet.set(x, y, dir);
+				var _mgBullet = scene.create(MgBullet, true, null);
+				_mgBullet.setBullet(x, y, dir, 0);
+				
 				// Start cooldown
 				mgBulletTime = mgBulletCd;
 			}
