@@ -12,9 +12,11 @@ class Projectile extends Entity{
 	var _dead:Bool;
 	var _hitboxSize:Int = 2;
 	var _explodeDistance:Int;
+	var _projectileType:String;
 	
 	public function new() {
 		super();
+		type = "projectile";
 	}
 	
 	public function setProjectile(_x:Float, _y:Float, _dir:Float){
@@ -39,5 +41,7 @@ class Projectile extends Entity{
 		}
 	}
 	
-	public function destroyProjectile(){}
+	public function destroyProjectile() { }
+	
+	public function explodeProjectile() { }
 }

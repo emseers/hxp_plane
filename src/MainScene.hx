@@ -20,9 +20,11 @@ class MainScene extends Scene{
 		var h_y:Int = Std.int(720 / 2);
 		
 		add(new Player(w_x, h_y));
-		add(new Enemy_0(600, 300));
 		add(new Camera());
 		add(new MouseControl());
+		add(new Enemy_0(600, 300));
+		
+		
 	}
 	
 	/*

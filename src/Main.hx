@@ -13,9 +13,10 @@ class Main extends Engine {
 	public static var currentScene:Int = 0;
 	
 	public static function main() { 
-		new Main(); 
+		//new Main(); 
 		trace("Starting game...");
-		//new Main(1280, 720, 1, false);
+		//new Main(1280, 720, 15, false);
+		new Main(1280, 720, 60, false);
 	}
 	
 	override public function init(){
@@ -58,5 +59,10 @@ class Main extends Engine {
 			HXP.scene = mainScene;
 			currentScene = 0;
 		}
+	}
+	
+	public static function restartGame():Void{
+		mainScene = new MainScene();
+		unpauseGame();
 	}
 }
