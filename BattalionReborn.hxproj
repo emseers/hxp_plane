@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="project.xml" />
     <movie fps="30" />
-    <movie width="640" />
-    <movie height="480" />
+    <movie width="1600" />
+    <movie height="900" />
     <movie version="1" />
     <movie minorVersion="0" />
     <movie platform="Lime" />
@@ -18,17 +18,18 @@
     <class path="C:\HaxeToolkit\haxe\lib\HaxePunk\2,5,5" />
     <class path="C:\HaxeToolkit\haxe\lib\lime\2,4,3" />
     <class path="C:\HaxeToolkit\haxe\lib\openfl\3,1,0" />
+    <class path="C:\HaxeToolkit\haxe\lib\HaxePunkTmx\1,0,3" />
     <class path="src" />
-    <class path="bin\windows\cpp\haxe" />
+    <class path="bin\flash\haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="HaxePunk=2.5.5&#xA;lime=2.4.3&#xA;openfl=3.1.0&#xA;openfl-next&#xA;tools=2.4.3&#xA;no-compilation&#xA;native&#xA;lime-native&#xA;openfl-native&#xA;windows&#xA;desktop" />
+    <option directives="HaxePunk=2.5.5&#xA;lime=2.4.3&#xA;openfl=3.1.0&#xA;HaxePunkTmx=1.0.3&#xA;openfl-next&#xA;tools=2.4.3&#xA;no-compilation&#xA;openfl-flash&#xA;web" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="False" />
-    <option additional="--remap flash:openfl&#xA;#--macro keep(&quot;Main&quot;)&#xA;-debug " />
+    <option additional="-swf-version 11.2&#xA;-debug " />
   </build>
   <!-- haxelib libraries -->
   <haxelib>

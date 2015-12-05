@@ -4,8 +4,8 @@
 
  	<app file="Main2" main="Main" path="bin" />
 
-	<window fps="60" background="0x333333" />
-	<window width="1280" height="720" resizable="true" unless="mobile" />
+	<window fps="30" background="0x333333" />
+	<window width="1600" height="900" resizable="true" unless="mobile" />
 	<window fullscreen="true" if="mobile" />
 	<window orientation="landscape" vsync="true" antialiasing="0" if="cpp" />
 
@@ -14,11 +14,13 @@
 	<haxelib name="openfl" />
 	<haxelib name="openfl-bitfive" if="html5" />
 	<haxelib name="HaxePunk" />
-
+	<haxelib name="HaxePunkTmx" />
+	
 	<assets path="assets/graphics" rename="graphics" include="*.png|*.jpg" />
 	<assets path="assets/audio" rename="audio" include="*.mp3" if="flash" />
 	<assets path="assets/audio" rename="audio" include="*.wav|*.ogg" unless="flash" />
 	<assets path="assets/font" rename="font" include="*.ttf" />
 	<assets path="assets/maps" rename="maps" include="*.tmx" />
+	
 	<icon path="assets/HaxePunk.svg" />
 </project>
