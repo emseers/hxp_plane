@@ -1,6 +1,7 @@
 package;
 import com.haxepunk.graphics.Text;
 import com.haxepunk.Scene;
+import entities.GuiManager;
 
 import com.haxepunk.utils.Input;
 
@@ -21,6 +22,7 @@ class GameScene extends Scene{
 	public var gameMap:GMap;
 	public var enemyManager:EnemyManager;
 	public var inputManager:InputManager;
+	public var guiManager:GuiManager;
 	
 	var tileX = 0;
 	var tileY = 0;
@@ -34,14 +36,21 @@ class GameScene extends Scene{
 		gameMap = new GMap();
 		enemyManager = new EnemyManager();
 		inputManager = new InputManager();
+		guiManager = new GuiManager();
 		
 		add(enemyManager);
 		add(gameMap);
 		add(inputManager);
+		add(guiManager);	
 	}
 	
-	public override function begin(){
+	public override function begin() {
+		inputManager.begin();
+		guiManager.begin();
+		
 		gameMap.loadMap(currentMapName);
+		guiManager.loadGUI();
+		
 		//trace("WIDTH : " + Main.tW);
 		//gameMap.getObjects("oLayer1");
 		inputManager.setCameraBounds(gameMap.getMapSize());
