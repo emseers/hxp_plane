@@ -25,9 +25,7 @@ class TiledPropertySet implements Dynamic<String>{
 	}
 
 	public function extend(source:Fast){
-		for (node in source.nodes.property){
+		for (node in source.nodes.property)
 			keys.set(node.att.name, node.att.value);
-			//trace("<|||   "  + node.att.name);
-		}
 	}
 }

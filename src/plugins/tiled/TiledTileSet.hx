@@ -21,16 +21,13 @@ class TiledTileSet{
 			var nodeId = Std.parseInt(node.att.id);
 			tileProps[nodeId] = new TiledPropertySet();
 			
-			for(propertyNode in node.nodes.properties){
+			for(propertyNode in node.nodes.properties)
 				tileProps[nodeId].extend(propertyNode);
-			}
 		}
 	}
 	
 	public function getTileProperty(_gid:Int, _property:String){
 		var id = _gid - firstGid;
-		//trace(id + "   " + firstGid);
-		
 		return tileProps[id].resolve(_property);
 	}
 

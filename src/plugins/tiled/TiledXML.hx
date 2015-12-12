@@ -26,9 +26,11 @@ class TiledXML{
 	public var height:Int;
 	
 	public var tileSets:Array<TiledTileSet>;
+	public var tileLayers:Array<TiledLayer>;
+	public var objectLayers:Array<TiledObjectGroup>;
 	
 	public static function loadFromFile(_filePath:String):TiledXML{
-		trace("Loading " + _filePath + " from file...");
+		trace("Parsing XML " + _filePath + " from file...");
 		return new TiledXML(Assets.getText(_filePath), _filePath);
 	}
 	
@@ -41,48 +43,32 @@ class TiledXML{
 		height = Std.parseInt(fileDataXml.att.height);
 		
 		tileSets = new Array<TiledTileSet>();
+		tileLayers = new Array<TiledLayer>();
+		objectLayers = new Array<TiledObjectGroup>();
 		
-		loadTileSets();
-		loadTiles();
-		loadObjects();
-	}
-	
-	public function loadTileSets():Void{	
-		for (node in fileDataXml.nodes.tileset){
-			//trace(node.att.firstgid);
+		// Parse tileSets
+		for (node in fileDataXml.nodes.tileset)
 			tileSets.push(new TiledTileSet(node));
-		}
+		
+		// Parse tiles
+		for(node in fileDataXml.nodes.layer)
+			tileLayers.push(new TiledLayer(node));
+		
+		for (node in fileDataXml.nodes.objectgroup)
+			objectLayers.push(new TiledObjectGroup(node));
+		
 		/*
-		
-		decide based on gid which tileset
-		xx = tileSets[id]; 
-		zz = xx.getTile(yy);
-		zz = xx.getTileProperty(yy, "property1");
-		
-		zz.getProperty()
-		xx{
-			getTile(yy){
-				
-			}
-		}
-		
-		usage:
-		get the tileSet num by finding the tileset with first tileSet whose firstGid is greater than
-		current tile's, tiled sorts tilesets in xml by firstGid order
-		http://doc.mapeditor.org/reference/tmx-map-format/
-		var t = tileSets[0];
-		trace("===> " + t.getTileProperty(2, "testProp1"));
+			usage:
+			get the tileSet num by finding the tileset with first tileSet whose firstGid is greater than
+			current tile's, tiled sorts tilesets in xml by firstGid order
+			http://doc.mapeditor.org/reference/tmx-map-format/
+			var t = tileSets[0];
+			trace("===> " + t.getTileProperty(2, "testProp1"));
+			
+			ex:
+			var d = tileSets[0];
+			trace(d.firstGid);
+			d.getTileProperty(2, "testProp1");
 		*/
-		var d = tileSets[0];
-		trace(d.firstGid);
-		trace("===> " + d.getTileProperty(2, "testProp1"));
-	}
-	
-	public function loadTiles():Void{
-		
-	}
-	
-	public function loadObjects():Void{
-		
 	}
 }
