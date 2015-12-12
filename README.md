@@ -20,7 +20,7 @@ Similar in spirit to [Battalion/Battalion 3]
 
 Other:
 
-- [HaxePunkTmx](https://github.com/HaxePunk/tiled) 1.0.3
+- <del>[HaxePunkTmx](https://github.com/HaxePunk/tiled) 1.0.3</del>
 - [Tiled](http://www.mapeditor.org/) 0.12.3
 
 ###build:
@@ -45,7 +45,7 @@ Other:
 
 6) Install/Update other dependencies
         
-    haxelib install HaxePunkTmx
+    <del>haxelib install HaxePunkTmx</del>
 	
 7) (Optional) Get [FlashDevelop](http://www.flashdevelop.org/community/viewforum.php?f=11),
 works really well for Haxe and Flash work
