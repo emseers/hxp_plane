@@ -17,7 +17,8 @@ class TiledObject{
 		type = tileObject.att.type;
 		x = Std.parseInt(tileObject.att.x);
 		y = Std.parseInt(tileObject.att.y);
-			
+		
+		objectProps = new TiledPropertySet();
 		objectProps.extend(tileObject);
 	}
 }

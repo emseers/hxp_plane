@@ -23,12 +23,13 @@ class GameEntity extends Entity {
 	
 	public function new(_x:Int, _y:Int, _unitType:Int, _faction:Int) {
 		super();
+		type = "GameEntity";
 		
 		xGrid = Std.int(_x / 64);
 		yGrid = Std.int(_y / 64);
 		x = _x;
 		y = _y;
-		
+		setHitbox(64, 64, 0, 0);
 		unitType = _unitType;
 		faction = _faction;
 		
