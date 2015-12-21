@@ -10,10 +10,22 @@ import haxe.xml.Fast;
 class TiledTileSet{
 	
 	public var firstGid:Int;
+	
+	/**
+	 * Assumptions made for laziness 
+	 * spacing = 1. tW, tH are same as rest
+	 */
+	
+	public var numCol:Int;
+	public var numRow:Int; 
+	
 	public var tileProps:Array<TiledPropertySet>;
 	
 	public function new(tileSet:Fast) {
 		firstGid = Std.parseInt(tileSet.att.firstgid);
+		
+		numCol = Math.floor(Std.parseInt(tileSet.node.image.att.width) / Main.tW);
+		numRow = Math.floor(Std.parseInt(tileSet.node.image.att.height) / Main.tH);
 		
 		tileProps = new Array<TiledPropertySet>();
 	
@@ -26,9 +38,18 @@ class TiledTileSet{
 		}
 	}
 	
-	public function getTileProperty(_gid:Int, _property:String){
-		var id = _gid - firstGid;
+	public function getTileProperty(gid:Int, _property:String){
+		var id = gid - firstGid;
 		return tileProps[id].resolve(_property);
 	}
 
+	public function getTileRow(gid:Int){
+		var id = gid - firstGid;
+		return Std.int(id / numRow);
+	}
+	
+	public function getTileCol(gid:Int){
+		var id = gid - firstGid;
+		return (id - (numCol * getTileRow(gid)));
+	}
 }
