@@ -13,6 +13,7 @@ class TiledLayer{
 		tileData = new Array<Int>();
 		
 		for (tileNode in tileLayer.nodes.tile)
+		tileLayer = tileLayer.node.data;
 			tileData.push(Std.parseInt(tileNode.att.gid));
 	}
 }
