@@ -4,15 +4,26 @@ package;
  * ...
  * @author Boarnoah
  */
-class GNavigation{
-	public var movementMap:Array<Int>;
+class GNavigation {
+	public var navList:Array<NavLayer>;
 	
 	public function new() {
-		//name = "GNavigation";
-		movementMap = new Array<Int>();
+		navList = new Array<NavLayer>();
 	}
 	
-	public function addTile(tileCost:Int){
-		movementMap.push(tileCost);
+	public function addTile(tileCost:Int, layer:Int){
+		navList[layer].layerData.push(tileCost);
+	}
+	
+	public function addLayer() {
+		navList.push(new NavLayer());
+	}
+}
+
+class NavLayer{
+	public var layerData:Array<Int>;
+	
+	public function new(){
+		layerData = new Array<Int>();
 	}
 }

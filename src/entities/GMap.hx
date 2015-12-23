@@ -80,6 +80,7 @@ class GMap extends Entity{
 	}
 	
 	private function loadLayer(index:Int) {	
+		gameNav.addLayer();
 		var animTileMap:AnimatedTilemap = new AnimatedTilemap("graphics/tileSet1.png", (mapWidth * Main.tW), (mapHeight * Main.tH), Main.tW, Main.tH, 1, 1, true);
 		var tiledLayer:TiledLayer = tiledMap.tileLayers[index];
 		var tileSet:TiledTileSet = tiledMap.tileSets[0];
@@ -102,10 +103,10 @@ class GMap extends Entity{
 					var tileCost:String = tileSet.getTileProperty(tileGid, "moveCost");
 					var tileType:String = tileSet.getTileProperty(tileGid, "tileType");
 					
-					gameNav.addTile(Std.parseInt(tileCost));
+					gameNav.addTile(Std.parseInt(tileCost), index);
 					animTileMap.setTile(r, c, (tileGid - tileSet.firstGid));
 				}else {
-					gameNav.addTile(-1);
+					gameNav.addTile(-1, index);
 					animTileMap.setTile(r, c, -1);
 				}
 				tileIndex++;
