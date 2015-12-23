@@ -11,9 +11,9 @@ class TiledLayer{
 	
 	public function new(tileLayer:Fast) {
 		tileData = new Array<Int>();
+		tileLayer = tileLayer.node.data;
 		
 		for (tileNode in tileLayer.nodes.tile)
-		tileLayer = tileLayer.node.data;
 			tileData.push(Std.parseInt(tileNode.att.gid));
 	}
 }
