@@ -39,17 +39,17 @@ class TiledTileSet{
 	}
 	
 	public function getTileProperty(gid:Int, _property:String){
-		var id = gid - firstGid;
+		var id:Int = gid - firstGid;
 		return tileProps[id].resolve(_property);
 	}
 
 	public function getTileRow(gid:Int){
-		var id = gid - firstGid;
-		return Std.int(id / numRow);
+		var id:Int = gid - firstGid;
+		return (id / numRow);
 	}
 	
 	public function getTileCol(gid:Int){
-		var id = gid - firstGid;
+		var id:Int = gid - firstGid;
 		return (id - (numCol * getTileRow(gid)));
 	}
 }

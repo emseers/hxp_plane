@@ -71,4 +71,19 @@ class TiledXML{
 			d.getTileProperty(2, "testProp1");
 		*/
 	}
+	
+	//Helper functions
+	public function findTileSet(tileGid:Int) {
+		var tileSetNum:Int = -1;
+		
+		for (i in 0...tileSets.length) {
+			var firstGid = tileSets[i].firstGid;
+			var numTiles = tileSets[i].numCol * tileSets[i].numRow;
+			
+			if (tileGid >= firstGid && tileGid <= (firstGid + numTiles))
+				tileSetNum = i;
+		}
+		
+		return tileSetNum;
+	}
 }
