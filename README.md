@@ -23,6 +23,10 @@ Other:
 - <del>[HaxePunkTmx](https://github.com/HaxePunk/tiled) 1.0.3</del>
 - [Tiled](http://www.mapeditor.org/) 0.12.3
 
+Plugins (dependencies nested in project):
+- [punk.AnimatedTileMap](https://github.com/voec/punk.AnimatedTilemap)
+- TiledXML - self written customised carbon copy of HaxePunkTmx (exposing the data more readily mostly)
+
 ###build:
 
 1) Get [Haxe](http://haxe.org/download)
