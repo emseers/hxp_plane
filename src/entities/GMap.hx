@@ -174,16 +174,3 @@ class GMap extends Entity{
 		return gameMapData.width;
 	}
 }
-
-	// Graphics 
-	/*
-	if (anim == 0) {
-		
-		//staticTileMap.setTile(r, c, (tileGid - tileSet.firstGid));
-	}else {
-		var fLength:Int = Std.parseInt(tileSet.getTileProperty(tileGid, "fLength"));
-		var fps:Int = Std.parseInt(tileSet.getTileProperty(tileGid, "fps"));
-		animTileMap.setTile(r, c, (tileGid - tileSet.firstGid));
-		//animTileMap.setTile(r, c, 0);
-	}
-	*/
