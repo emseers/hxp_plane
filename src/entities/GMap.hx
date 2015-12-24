@@ -18,7 +18,7 @@ import GameScene;
 
 /**
  * ...
- * @author Boarnoah
+ * @author Emseers
  */
 class GMap extends Entity{
 	public var mapWidth:Int = 0;

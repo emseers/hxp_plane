@@ -2,7 +2,7 @@ package entities;
 import com.haxepunk.Entity;
 /**
  * ...
- * @author Boarnoah
+ * @author Emseers
  */
 class EnemyManager extends Entity{
 	//private enemyList

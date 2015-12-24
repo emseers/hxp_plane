@@ -13,7 +13,7 @@ import entities.InputManager;
 
 /**
  * ...
- * @author Boarnoah
+ * @author Emseers
  */
 class GameScene extends Scene{
 	//public var gameMapData:TmxMap;

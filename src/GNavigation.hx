@@ -2,7 +2,7 @@ package;
 
 /**
  * ...
- * @author Boarnoah
+ * @author Emseers
  */
 class GNavigation {
 	public var navList:Array<NavLayer>;

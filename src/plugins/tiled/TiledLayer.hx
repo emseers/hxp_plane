@@ -2,7 +2,10 @@ package plugins.tiled;
 
 /**
  * ...
- * @author Boarnoah
+ * @author Emseers
+ * 
+ * Thanks Matt Tuttle@Haxepunk Team for HaxePunkTmx (which this is a modifcation of)
+ * Tiled http://doc.mapeditor.org/reference/tmx-map-format/
  */
 import haxe.xml.Fast;
 

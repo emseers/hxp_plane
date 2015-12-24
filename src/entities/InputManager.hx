@@ -9,7 +9,7 @@ import entities.GMap;
 
 /**
  * ...
- * @author Boarnoah
+ * @author Emseers
  */
 class InputManager extends Entity{
 	public var cameraSpeed:Int = 512; //64 px/s

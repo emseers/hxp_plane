@@ -4,7 +4,7 @@ import com.haxepunk.graphics.Image;
 
 /**
  * ...
- * @author Boarnoah
+ * @author Emseers
  */
 class GameEntity extends Entity {
 	

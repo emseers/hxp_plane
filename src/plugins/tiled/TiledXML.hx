@@ -2,7 +2,7 @@ package plugins.tiled;
 
 /**
  * ...
- * @author Boarnoah
+ * @author Emseers
  * 
  * Supports XML Orthognal Tiled Maps
  * 

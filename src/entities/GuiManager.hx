@@ -8,7 +8,7 @@ import entities.InputManager;
 
 /**
  * ...
- * @author Boarnoah
+ * @author Emseers
  */
 class GuiManager extends Entity{
 	public var turnButton:GuiButton;
