@@ -10,6 +10,11 @@ Similar in spirit to [Battalion/Battalion 3]
 <del>Similar to the old flash game [Skies of War]
 (http://www.hagserver.com/swfo/83-skies-of-war-extended.swf?version=1359034493)</del>
 
+###contribute
+Feel free to copy code snippets etc... for help with your own projects.
+
+If you see anything odd with the code/play testing experience please report it on the Issue page
+
 ###dependencies
 !! Install for all dependencies is through Haxe/Lime 
 
@@ -24,8 +29,16 @@ Other:
 - [Tiled](http://www.mapeditor.org/) 0.12.3
 
 Plugins (dependencies nested in project):
-- [punk.AnimatedTileMap](https://github.com/voec/punk.AnimatedTilemap)
+
+- voec's [punk.AnimatedTileMap](https://github.com/voec/punk.AnimatedTilemap)
 - TiledXML - self written customised carbon copy of HaxePunkTmx (exposing the data more readily mostly)
+
+###assets
+Graphic + sound assets are stored on Emseers' Google Drive.
+Prototype assets (really great free packages):
+
+- Kenney's [Roguelike Modern City](http://kenney.nl/assets/roguelike-modern-city)
+- Ari Feldman's [Spritelib_GPL - 1945 Set](http://www.widgetworx.com/spritelib/)
 
 ###build:
 
@@ -53,5 +66,10 @@ Plugins (dependencies nested in project):
 	
 7) (Optional) Get [FlashDevelop](http://www.flashdevelop.org/community/viewforum.php?f=11),
 works really well for Haxe and Flash work
+
+8) Symbolic link the GDrive folders to their corresponding locations in the repo
+
+ - Use [Link](http://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html) Shell Extension to save time
+ - [Tutorial](http://emseers.github.io/blog/2015-11-27.html) on how to do it properly
 
 Clone and open project in FD, should work.
