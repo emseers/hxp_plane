@@ -59,15 +59,14 @@ class GMap extends Entity{
 		mapHeight = tiledMap.height;
 
 		loadTerrain();
-		//loadNav();
-		//loadObjects();	
+		loadObjects();	
 	}
 	
 	private function loadTerrain() {
 		/**
 		 * Base (water) Layer = 0
 		 * Ground Layer = 1
-		 * 
+		 * <IGNORE LAYER> = 2 (used to have icons for objects in TiledEditor)
 		 * Pointless to make it too generic (figure out tileSet dynamically) 
 		 * since the tileSets are known to begin with etc...
 		 */
@@ -79,6 +78,7 @@ class GMap extends Entity{
 		}
 	}
 	
+	// TODO: Combine loadLayer and loadObjects	
 	private function loadLayer(index:Int) {	
 		gameNav.addLayer();
 		var animTileMap:AnimatedTilemap = new AnimatedTilemap("graphics/tileSet1.png", (mapWidth * Main.tW), (mapHeight * Main.tH), Main.tW, Main.tH, 1, 1, true);
@@ -96,12 +96,13 @@ class GMap extends Entity{
 				
 				// 0 denotes no tile
 				if (tileGid != 0) {
+					//Needed when multiple tileSets, unecessary for now
 					var tileSetIndex:Int = tiledMap.findTileSet(tileGid);
 					tileSet = tiledMap.tileSets[tileSetIndex];
 					
 					var anim:Int = Std.parseInt(tileSet.getTileProperty(tileGid, "anim"));
 					var tileCost:String = tileSet.getTileProperty(tileGid, "moveCost");
-					var tileType:String = tileSet.getTileProperty(tileGid, "tileType");
+					//var tileType:String = tileSet.getTileProperty(tileGid, "tileType");
 					
 					gameNav.addTile(Std.parseInt(tileCost), index);
 					animTileMap.setTile(r, c, (tileGid - tileSet.firstGid));
@@ -146,22 +147,33 @@ class GMap extends Entity{
 		}
 	}
 	
-	private function loadObjects(){
-		for (object in gameMapData.getObjectGroup("oLayer1").objects) {
-			var _x:Int = object.x;
-			var _y:Int = object.y;
-			var _type:String = object.type;
+	private function loadObjects() {
+		var tiledLayer:TiledLayer = tiledMap.tileLayers[2];
+		var tileSet:TiledTileSet = tiledMap.tileSets[1];
+		
+		var tileIndex:Int = 0;
+		
+		for(c in 0...mapWidth){
+			for (r in 0...mapHeight) {
 				
-			/**
-			 * ge = GameEntity
-			 * f = faction
-			 * ut = unitType
-			 **/
-			
-			if (_type == "ge") {
-				var _unitType:Int = Std.parseInt(object.custom.resolve("ut"));
-				var _faction:Int = Std.parseInt(object.custom.resolve("f"));
-				scene.add(new GameEntity(_x, _y, _unitType, _faction));
+				var tileGid:Int = tiledLayer.tileData[tileIndex];
+				
+				// 0 denotes no tile
+				if (tileGid != 0) {
+					var tileSetIndex:Int = tiledMap.findTileSet(tileGid);
+					tileSet = tiledMap.tileSets[tileSetIndex];
+					
+					var type:Int = Std.parseInt(tileSet.getTileProperty(tileGid, "type"));
+					
+					if (type == 1){
+						var faction:Int = Std.parseInt(tileSet.getTileProperty(tileGid, "faction"));
+						var unitX:Int = c * Main.tW;
+						var unitY:Int = r * Main.tH;
+						scene.add(new GameEntity(unitX, unitY, tileGid, faction));
+					}
+				}
+				
+				tileIndex++;
 			}
 		}
 	}
