@@ -1,5 +1,6 @@
 # hxp_plane
-Trying to do a damn plane in HaxePunk.
+2D turn based strategy with an overworld campaign
+
 
 Similar in spirit to [Battalion/Battalion 3]
 (http://www.kongregate.com/games/urbansquall/battalion-vengeance)
