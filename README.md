@@ -9,6 +9,7 @@ Similar in spirit to [Battalion/Battalion 3]
 (http://www.hagserver.com/swfo/83-skies-of-war-extended.swf?version=1359034493)</del>
 
 ###screenshots
+![V0.2](http://i.imgur.com/VePON98.png "V0.2")
 ![V0.1](http://i.imgur.com/2jBWxcL.png "V0.1")
 
 ###contribute
